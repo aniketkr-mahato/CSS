@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    height: 400px;
+    border: 2px solid red;
+
+    display: flex; 
+    /* Applies flex property to the container. */
+
+
+
+    /*
+    1. flex-direction: row;  --> Default
+
+    2. flex-direction: column;
+    Cross-axis becomes Main-axis.
+
+    3. flex-direction: row-reverse;
+    Items start to fill from right to left & stick to right side.
+
+    4. flex-direction: column-reverse;
+    Items start to fill from BottomToTop sticking to the bottom of container.
+    */
+
+
+
+    /* flex-wrap: wrap; */
+    /*
+    1.flex-wrap: nowrap; --> Default
+
+    2.flex-wrap: wrap;
+    When container shinks along width, if items do not have enough space then extra items move down.
+
+    3.flex-wrap: wrap-reverse; --> Wraps in reverse. */
+
+
+
+    /* flex-flow: wrap row; */
+    /* Shorthand for flex-wrap & flex-direction. */
+
+
+
+    /* gap: 10px; */
+    /*
+    1. gap: 10px;
+    Shorthand for row-gap & column-gap
+
+    2. row-gap: 10px;
+    Defines gap between two Rows of child items: 
+
+    3. column-gap: 10px;
+    Defines gap between two Columns of child items.
+    */
+
+
+
+    /*
+    justify-content: ;
+    Used to Align items across *Main-axis*.
+
+    1. justify-content: space-around;
+    Distributes leftover space around items (left & right of all items)
+
+    2. justify-content: space-between;
+    Distributes leftover space among items only (no space is given between container & items.)
+
+    3.justify-content: space-evenly;
+    
+    4. justify-content: flex-start;
+    Aligns all elements to left of container.
+
+    5. justify-content: flex-end;
+    
+    6. justify-content: center;
+    Aligns elements to center of container across Main-axis.
+    */
+
+    align-items: center;
+    /*
+    align-items: ;
+    Used to align elements across *Cross-axis*.
+
+    1. align-items: stretch;
+    Stretches the items to fit vertically inside container.
+
+    2. align-items: center;
+    Aligns all items to center across Cross-axis.
+
+    3. align-items: flex-start;
+    Aligns all items to Top of the container.
+
+    4. align-items: flex-end;
+    Aligns all items to Bottom of the container.
+    */
+
+
+
+    /*
+    align-content: ;
+    Handles spacing across Cross axis.
+    
+    align-content: flex-start;
+
+    align-content: flex-end;
+
+    align-content: space-around;
+
+    align-content: space-between;
+
+    align-content: space-evenly;
+    */
+}
+
+
+
+.box {
+    border: 2px solid green;
+    /* margin: 10px 0; */
+    width: 80px;
+
+    /* flex-basis: 25%; */
+    /* All elements' width sets to 25% of container-width. */
+    /* Works along Main axis. */
+    /* Does not work properly when spacing or gap is set between elements */
+} 
+
+
+
+#box-1 {
+
+    /* All boxes have order=0 by default.
+    Elements having greater order come last. */
+    /* order: 1; */
+
+
+    flex-grow: 1;
+    /* Grows an element in leftover space. */
+    /* Default value 0. */
+
+
+    /* flex-shrink: 2; */
+    /* Default value 1. */
+
+    /* flex-basis: 200px; */
+    /* Defines initial width of a child in direction of Main-axis. */
+
+}
+
+
+
+#box-3 {
+    /* order: 2; */
+
+    flex-grow: 2;
+    /* Now box-3 will grow 2times faster than box-1. */
+}
+
+#box-2 {
+    flex: 0 1 200px;
+    /* flex is shorthand for flex-grow|shrink|basis. */
+
+    /* align-self: stretch; */
+}
