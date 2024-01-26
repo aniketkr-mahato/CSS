@@ -20,4 +20,4 @@ h1 {
 section {
     font-size: 2rem;
 }
-/* rem does not word relative to parent tag, it only works relative to root(which is html) */
+/* rem does not work relative to parent tag, it only works relative to root(which is html) */
