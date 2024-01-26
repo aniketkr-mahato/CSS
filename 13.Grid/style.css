@@ -6,21 +6,27 @@
 
 .container {
     border: 2px solid red;
-    height: 50vw;
+    height: 600px;
     display: grid;
-
+    
     gap: 20px 5px;
-
-    grid-template-columns: 200px 200px; /*will make two columns*/
+    
+    grid-template-columns: 200px 200px 200px; /*will make three columns*/
     /* grid-template-columns: 200ps auto auto; */
     /* grid-template-columns: repeat(4, 1fr); makes four columns 1fraction each */
-
+    
     /* grid-template-rows: 100px 80px; */
     /* grid-auto-rows: 50px; sets height of row which are not defined */
-
+    
     /* justify-content: center; */
     /* align-content: center; */
     /* align-items: center; */
+    
+    grid-template-areas: "hdr hdr hdr hdr"
+                         "sbr main main main"
+                         "sbr main main main"
+                         "ftr ftr ftr ftr";
+    ;
 }
 
 .box {
@@ -30,22 +36,53 @@
 
 #box-1 {
     background-color: bisque;
-    justify-self: start;
+    /* justify-self: start; */
+    /* align-self: end; */
+
+    /* grid-column-start: 1; */
+    /* grid-column-end: 4; */
+    /* grid-column: 1 / 4; */
+    /* grid-column: 1 / span 3; */
+
+    /* grid-row: 1 / span 4; */
+
+    /* grid-area: 1 / 1 / 4 / 3; */
+
+    grid-area: hdr;
 }
+
+#box-2 {
+    grid-area: sbr;
+}
+
+#box-3 {
+    grid-area: main;
+}
+
+#box-4 {
+    grid-area: ftr;
+}
+
 
 /* GRID CONTAINER properties-->
     gap => gives rowgap and columngap.
     grid-template-columns => to define width of columns.
     grid-template-rows => to define height of rows.
     justify-content => aligns items across x-axis.
-    align-content => aligns items across y-axis (default: stretch).
+    align-content => aligns items across y-axis.
     align-items => aligns items at on block axis within grid area.
 */
 
 /* GRID CHILD ITEMS -->
-    justify-self => 
-    align-self =>
-    grid-column =>
-    grid-row =>
-    grid-area =>
+    justify-self => aligns single item across x-axis.
+    align-self => aligns single item across y-axis.
+    grid-column => similar to colspan.
+    grid-row => similar to rowspan.
+    grid-area => shorthand for grid-column & grid-row.
+*/
+
+/* GRID TEMPLATE AREA -->
+    -Named grid items can be referred to by grid-template-areas
+    property of grid container. The grid-area property can also be used to
+    assign names to grid items.
 */
